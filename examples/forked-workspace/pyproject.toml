@@ -1,0 +1,27 @@
+[project]
+name = "demo-app"
+version = "0.1.0"
+requires-python = ">=3.9"
+dependencies = [
+    # HTTP client; stay below 1.0 until the migration lands
+    "httpx>=0.25,<1",
+    "numpy>=1.24",  # the resolver forks this one across Python versions
+    'rich == 13.7.0',  # pinned on purpose
+    "click>=8.0 ; python_version >= '3.10'",
+    "demo-core",
+]
+
+[project.optional-dependencies]
+yaml = ["pyyaml>=6.0"]
+
+[dependency-groups]
+dev = [
+    "pytest>=7.0",
+    "packaging",
+]
+
+[tool.uv.sources]
+demo-core = { workspace = true }
+
+[tool.uv.workspace]
+members = ["packages/*"]
