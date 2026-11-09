@@ -1,0 +1,37 @@
+[project]
+name = "lockfloor"
+version = "0.1.0"
+description = "Raise pyproject.toml lower bounds to the versions uv's resolver locks together"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Zaid Ali Syed", email = "sidzaid72@gmail.com" }]
+requires-python = ">=3.11"
+keywords = ["uv", "pyproject", "dependencies", "upgrade", "lockfile"]
+classifiers = [
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Build Tools",
+]
+dependencies = [
+    "packaging>=24.0",
+    "tomlkit>=0.12.0",
+]
+
+[project.scripts]
+lockfloor = "lockfloor.cli:main"
+
+[project.urls]
+Issue = "https://github.com/astral-sh/uv/issues/6794"
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["network: runs the real uv resolver against PyPI"]
+addopts = "-m 'not network'"
