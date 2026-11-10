@@ -10,3 +10,5 @@ Recommended first of the four Python packages (uv#6794 has the most demand). Ste
 1. Done 2026-11-10: repo public, `[project.urls]` added.
 2. `cd "C:/Users/Asus/projects/lockfloor" && uv build && uvx twine upload dist/*` (asks for a PyPI API token).
 3. Comment on astral-sh/uv#6794 in his own words.
+
+Published to PyPI 2026-11-10: https://pypi.org/project/lockfloor/0.1.0/ (wheel + sdist, verified via the JSON API).
