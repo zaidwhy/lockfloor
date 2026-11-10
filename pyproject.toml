@@ -18,6 +18,10 @@ dependencies = [
     "tomlkit>=0.12.0",
 ]
 
+[project.urls]
+Repository = "https://github.com/zaidwhy/lockfloor"
+Issues = "https://github.com/zaidwhy/lockfloor/issues"
+
 [project.scripts]
 lockfloor = "lockfloor.cli:main"
 
