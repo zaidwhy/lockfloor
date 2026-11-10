@@ -21,12 +21,11 @@ dependencies = [
 [project.urls]
 Repository = "https://github.com/zaidwhy/lockfloor"
 Issues = "https://github.com/zaidwhy/lockfloor/issues"
+"uv issue" = "https://github.com/astral-sh/uv/issues/6794"
 
 [project.scripts]
 lockfloor = "lockfloor.cli:main"
 
-[project.urls]
-Issue = "https://github.com/astral-sh/uv/issues/6794"
 
 [dependency-groups]
 dev = ["pytest>=8.0"]
